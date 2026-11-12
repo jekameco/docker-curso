@@ -34,3 +34,36 @@ docker ps
   ```bash
   docker rm pruebita
   ```
+
+* **inicializar el contenedor (cuando se encuentra detenido):**
+  ```bash
+  docker start pruebita
+  ```
+
+* **reiniciar el contenedor (cuando falle):**
+  ```bash
+  docker restart pruebita
+  ```
+
+* **logs el contenedor**
+  ```bash
+  docker logs pruebita
+  ```
+
+* **ver detalles del contenedor**
+  ```bash
+  docker inspect pruebita
+  ```
+
+* **ver detalles de estadistica del contenedor**
+  ```bash
+  docker stats --no-stream pruebita
+  ```
+
+* **ejecutar comandos dentro del contenedor**
+  ```bash
+  docker exec -it pruebita sh
+  ```
+  1. `docker exec` : ejecutar algo denntro del contenedor
+  2. `-it` : -i muestra que el comnado se siga ejecutando y no se cierre -t abrir una terminal para realizar lo que uno desee
+  3. `sh` : un interprete de comandos ( originario de linux )
