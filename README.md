@@ -67,3 +67,24 @@ docker ps
   1. `docker exec` : ejecutar algo denntro del contenedor
   2. `-it` : -i muestra que el comnado se siga ejecutando y no se cierre -t abrir una terminal para realizar lo que uno desee
   3. `sh` : un interprete de comandos ( originario de linux )
+
+* **Generar imagen propia**
+  ```bash
+  docker build -t cofla-tareas:1.0 ./
+  ```
+
+  1. `docker build`: genera la imagen
+  2. `-t confla-tarea:1.0` genera un nombre a la imagen con una etiqueta [nombre_imagen]:[etiqueta]
+  3. `./`: contexto de la contruccion ( carpeta docker )
+
+* **ver imagenes que tiene el docker**
+  ```bash
+  docker images
+  ```
+
+* **generar contenedor con la imagen creada ( mismo paso anterior )**
+  ```bash
+  docker run -d --name cofla-app -p 127.0.0.1:3000:3000 cofla-tareas:1.0
+  ```
+
+  `mientras el contenedor este activo los cambios que hagamos se mantendran, pero si detenemos el contenedor y volvemos a iniciarlo perdemos todo lo realizado anteriormente, para esto todos los cambios se deberian guardar en un volumen`
